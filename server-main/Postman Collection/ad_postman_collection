@@ -1,0 +1,588 @@
+{
+	"info": {
+		"_postman_id": "8cc927f8-6716-4aae-8478-a62c6a08f133",
+		"name": "skelbimai-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32552196"
+	},
+	"item": [
+		{
+			"name": "User handler",
+			"item": [
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"username\": \"tadas\", \r\n    \"email\": \"tadas@gmail.com\", \r\n    \"password\": \"passwordas1\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"tadas@gmail.com\", \r\n    \"password\": \"passwordas1\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show user by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzJjZDRiZmFmZjEzMjgyZDg1YWRiZSIsImlhdCI6MTcxODgwMDQ4NywiZXhwIjoxNzIxMzkyNDg3fQ.JKqsW8712rxoOLGAJdBLZiOZrfvPWr5FxuSnB_5GgKg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/users/6672cd4bfaff13282d85adbe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"users",
+								"6672cd4bfaff13282d85adbe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all users(admin only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzJjZDRiZmFmZjEzMjgyZDg1YWRiZSIsImlhdCI6MTcxODgwMDQ4NywiZXhwIjoxNzIxMzkyNDg3fQ.JKqsW8712rxoOLGAJdBLZiOZrfvPWr5FxuSnB_5GgKg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user(admin only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzJjZDRiZmFmZjEzMjgyZDg1YWRiZSIsImlhdCI6MTcxODgwMDQ4NywiZXhwIjoxNzIxMzkyNDg3fQ.JKqsW8712rxoOLGAJdBLZiOZrfvPWr5FxuSnB_5GgKg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/users/(cia rasom id)",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"users",
+								"(cia rasom id)"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ad handler",
+			"item": [
+				{
+					"name": "Create AD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzJjZDRiZmFmZjEzMjgyZDg1YWRiZSIsImlhdCI6MTcxODgwMDQ4NywiZXhwIjoxNzIxMzkyNDg3fQ.JKqsW8712rxoOLGAJdBLZiOZrfvPWr5FxuSnB_5GgKg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"kede\",\r\n    \"category\":\"baldai\",\r\n    \"price\":\"5\",\r\n    \"description\":\"labai lieva kede\",\r\n    \"images\":\"lievakede.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/ads",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"ads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create category(admin only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzJjZDRiZmFmZjEzMjgyZDg1YWRiZSIsImlhdCI6MTcxODgwMDQ4NywiZXhwIjoxNzIxMzkyNDg3fQ.JKqsW8712rxoOLGAJdBLZiOZrfvPWr5FxuSnB_5GgKg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Kedes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzJjZDRiZmFmZjEzMjgyZDg1YWRiZSIsImlhdCI6MTcxODgwMDQ4NywiZXhwIjoxNzIxMzkyNDg3fQ.JKqsW8712rxoOLGAJdBLZiOZrfvPWr5FxuSnB_5GgKg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show my AD's",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzJjZDRiZmFmZjEzMjgyZDg1YWRiZSIsImlhdCI6MTcxODgwMDQ4NywiZXhwIjoxNzIxMzkyNDg3fQ.JKqsW8712rxoOLGAJdBLZiOZrfvPWr5FxuSnB_5GgKg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/ads/my",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"ads",
+								"my"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all AD's",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/ads",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"ads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update AD(user only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzJjZDRiZmFmZjEzMjgyZDg1YWRiZSIsImlhdCI6MTcxODgwMDQ4NywiZXhwIjoxNzIxMzkyNDg3fQ.JKqsW8712rxoOLGAJdBLZiOZrfvPWr5FxuSnB_5GgKg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"kede UPDATED\",\r\n    \"category\":\"baldai\",\r\n    \"price\":\"5\",\r\n    \"description\":\"labai lieva kede\",\r\n    \"images\":\"lievakede.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/(rasom ad id)",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"(rasom ad id)"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete AD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzJkYjZlOGZlNzBiMjhmMWI5MGQzOCIsImlhdCI6MTcxODgwMzQ2NywiZXhwIjoxNzIxMzk1NDY3fQ.IVQPUHZG1WdrktJ75eyTd5Vm7DfALWivXkuGc6HO1J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/ads/6672de648fe70b28f1b90d6e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"ads",
+								"6672de648fe70b28f1b90d6e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete category(admin only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzJjZDRiZmFmZjEzMjgyZDg1YWRiZSIsImlhdCI6MTcxODgwMDQ4NywiZXhwIjoxNzIxMzkyNDg3fQ.JKqsW8712rxoOLGAJdBLZiOZrfvPWr5FxuSnB_5GgKg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/categories/(cia rasom id)",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"categories",
+								"(cia rasom id)"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Interaction handler",
+			"item": [
+				{
+					"name": "Create comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzJjZDRiZmFmZjEzMjgyZDg1YWRiZSIsImlhdCI6MTcxODgwMDQ4NywiZXhwIjoxNzIxMzkyNDg3fQ.JKqsW8712rxoOLGAJdBLZiOZrfvPWr5FxuSnB_5GgKg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\":\"pz kokia lieva kede\",\r\n    \"ad\":\"(rasom AD id)\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete comment(user only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzJjZDRiZmFmZjEzMjgyZDg1YWRiZSIsImlhdCI6MTcxODgwMDQ4NywiZXhwIjoxNzIxMzkyNDg3fQ.JKqsW8712rxoOLGAJdBLZiOZrfvPWr5FxuSnB_5GgKg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/comments/(cia rasom komentaro id)",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"comments",
+								"(cia rasom komentaro id)"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Press Like",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzJkYjZlOGZlNzBiMjhmMWI5MGQzOCIsImlhdCI6MTcxODgwMzQ2NywiZXhwIjoxNzIxMzk1NDY3fQ.IVQPUHZG1WdrktJ75eyTd5Vm7DfALWivXkuGc6HO1J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/ads/6672dd248fe70b28f1b90d54/like",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"ads",
+								"6672dd248fe70b28f1b90d54",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All liked AD's",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzJkYjZlOGZlNzBiMjhmMWI5MGQzOCIsImlhdCI6MTcxODgwMzQ2NywiZXhwIjoxNzIxMzk1NDY3fQ.IVQPUHZG1WdrktJ75eyTd5Vm7DfALWivXkuGc6HO1J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/ads/liked",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"ads",
+								"liked"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
